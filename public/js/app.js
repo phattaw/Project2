@@ -1,56 +1,41 @@
-$(document).ready(function(){
+$(document).ready(function() {
+  $("#signInBtn").on("click", function(event) {
+    event.preventDefault();
 
-    $("#signInBtn").on("click", function(event) {
-    
-        event.preventDefault();
-    
-        $("#signInModal").modal("show");
-        $("#signUpModal").modal("hide");
-    
-    });
+    $("#signInModal").modal("show");
+    $("#signUpModal").modal("hide");
+  });
 
-    $("#signUpBtn").on("click", function(event) {
-    
-        event.preventDefault();
-    
-        $("#signUpModal").modal("show");
-        $("#signInModal").modal("hide");
-    
-    });
+  $("#signUpBtn").on("click", function(event) {
+    event.preventDefault();
 
-    $("#signUpLink").on("click", function(event) {
-    
-        event.preventDefault();
-    
-        $("#signUpModal").modal("show");
-        $("#signInModal").modal("hide");
-    
-    
-    });
+    $("#signUpModal").modal("show");
+    $("#signInModal").modal("hide");
+  });
 
-    $("#signInLink").on("click", function(event) {
-    
-        event.preventDefault();
-    
-        $("#signInModal").modal("show");
-        $("#signUpModal").modal("hide");
-    
-    });
+  $("#signUpLink").on("click", function(event) {
+    event.preventDefault();
 
-    $("#postReview").on("click", function(event) {
-    
-        event.preventDefault();
-    
-        $("#postReviewModal").modal("show");
-    
-    });
+    $("#signUpModal").modal("show");
+    $("#signInModal").modal("hide");
+  });
 
-    $("#postPhoto").on("click", function(event) {
-    
-        event.preventDefault();
-    
-        $("#postPhotoModal").modal("show");
-    
-    });
+  $("#signInLink").on("click", function(event) {
+    event.preventDefault();
 
+    $("#signInModal").modal("show");
+    $("#signUpModal").modal("hide");
+  });
+
+  $("#postReview").on("click", function(event) {
+    event.preventDefault();
+
+    $("#postReviewModal").modal("show");
+  });
+
+  $("#postPhoto").on("click", function(event) {
+    event.preventDefault();
+
+    $("#postPhotoModal").modal("show");
+  });
 });
