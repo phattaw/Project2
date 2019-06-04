@@ -1,0 +1,22 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#mainHeader {
+    font-family: 'Coiny', cursive; 
+}
+
+#footerText {
+    color: #ffffff;
+}

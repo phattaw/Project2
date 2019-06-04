@@ -1,19 +1,160 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Example</h5>
-          <p>
-            <strong>ID</strong>: {{example.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{example.text}}</p>
-          <p>
-            <strong>Description:</strong> {{example.description}}</p>
-            <a href="/">← Back To Home</a>
+    <!-- This is the navbar! -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="home.html">Pet Venue Review <i class="fas fa-dog"></i> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fas fa-bone"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Friends <i class="fas fa-hand-peace"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Post <i class="fas fa-plus-circle"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#" id="postReview"><i class="fas fa-pencil-alt"></i> Reviews</a>
+                            <a class="dropdown-item" href="#" id="postPhoto"><i class="fas fa-camera-retro"></i> Photos </a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Places <i class="fas fa-map-marked-alt"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#"><i class="fas fa-hotel"></i> Hotels</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-utensils"></i> Restaurants</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-leaf"></i> Pet Parks</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div> 
+    </nav>
+    <br>
+
+    <!-- This is the main tag to keep the footer sticky! -->
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 id="mainHeader">Your Places:</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                        <img src="/public/images/barKDogBar.png" class="img-fluid" alt="Pet Friendly Places" >
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target=".bd-example-modal-lg">Bar K Dog Bar <i class="fas fa-paw"></i></button>
+                </div>
+            </div>
         </div>
-      </div>
+    </main>
+
+    <!-- This is the footer! -->
+    <footer>
+        <nav class="navbar navbar-dark bg-dark ">
+            <div class="container-fluid justify-content-center">
+                <p id="footerText"> © The Destroyers 2019</p>
+            </div>     
+        </nav>
+    </footer>
+
+    <!-- This is the modal to post a review! -->
+    <div class="modal" tabindex="-1" role="dialog" id="postReviewModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post a Review!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="reviewPlace">Name of Place:</label>
+                            <input type="text" class="form-control" id="reviewPlace" placeholder="Review Place">
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewTitle">Title of the Review:</label>
+                            <input type="text" class="form-control" id="reviewTitle" placeholder="Review Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Review: </label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Review Text"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg">Submit <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+
+    <!-- This is the modal to post a photo! -->
+    <div class="modal" tabindex="-1" role="dialog" id="postPhotoModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post a Photo!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="titlePhoto">Title of Photo:</label>
+                            <input type="text" class="form-control" id="titlePhoto" placeholder="Photo Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Photo:</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Description of Photo: </label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Photo Description"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg">Submit <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is the large modal for content! -->
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center">Bar K Dog Bar!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="/public/images/barKDogBarInside.png" class="img-fluid" alt="Pet Friend Places">
+                    <hr>
+                    <div id="modalBtns">
+                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-share-square"></i></button> 
+                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-directions"></i></button> 
+                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-save"></i></button>
+                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-paw"></i></button>
+                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <hr>
+                    <h5>Description:</h5>
+                    <p>Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehous, and dog park, constructed out of repurposed shipping containers.</p>
+                    <h5>Address:</h5>
+                    <p>501 Berkley Parkway, Kansas City, MO 64120</p>
+                    <h5>Hours</h5>
+                    <p>9AM to 10PM, Everyday</p>
+                    <h5>Phone Number:</h5>
+                    <p>(816) 4747-2275</p>
+                    <a class="btn btn-primary btn-lg" id="websiteBtn" href="https://www.barkdogbar.com/" target="_blank">Website <i class="fas fa-paw"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
