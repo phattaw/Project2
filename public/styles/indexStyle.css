@@ -5,7 +5,7 @@ body {
 }
 
 body {
-    background-image: url('../images/petFriendlyPlaces.jpeg');
+    background-image: url('../public/images/petFriendlyPlaces.jpeg');
     background-size: cover;
     display: flex;
     flex-direction: column;
