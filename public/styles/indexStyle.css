@@ -1,0 +1,36 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url('../images/petFriendlyPlaces.jpeg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#homeJumbotron {
+    background: transparent;
+}
+
+#homeHeader {
+    font-family: 'Coiny', cursive;
+    color: #0c0c53;
+}
+
+#homeLead {
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: bolder;
+    color: #0c0c53;
+}
+
+#footerText {
+    color: #ffffff;
+}
