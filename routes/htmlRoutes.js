@@ -10,6 +10,9 @@ module.exports = function(app) {
       });
     });
   });
+  app.get("/petVenue", function(req, res) {
+    res.render("petVenue", {});
+  });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
