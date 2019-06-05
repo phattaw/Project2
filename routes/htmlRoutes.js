@@ -1,4 +1,6 @@
 var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 
 module.exports = function(app) {
   // Load index page
@@ -10,7 +12,8 @@ module.exports = function(app) {
       });
     });
   });
-  app.get("/petVenue", function(req, res) {
+  app.get("/petVenue", isAuthenticated, function(req, res) {
+    console.log(req.user);
     res.render("petVenue", {});
   });
 
