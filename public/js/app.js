@@ -24,8 +24,13 @@ $(document).ready(function () {
     event.preventDefault();
     var userData = $(this).serialize();
 
-    $.post("/api/login", userData, function(data){
-      console.log(data);
+    $.post("/api/login", userData).then(function (data) {
+      window.location.replace(data);
+      // console.log(data);
+    }).catch(function (err){
+      console.log(err);
+      console.log("testing");
+      //this is where you would show the login error message
     });
   });
 
