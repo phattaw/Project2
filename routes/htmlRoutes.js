@@ -12,9 +12,13 @@ module.exports = function(app) {
       });
     });
   });
-  app.get("/petVenue", isAuthenticated, function(req, res) {
-    console.log(req.user);
-    res.render("petVenue", {});
+
+  app.get("/petVenue", function(req, res) {
+    if(isAuthenticated) {
+      res.render("petVenue", {});
+    } else (res.render("petVenue", {}))
+    // console.log(req.user);
+    // res.render("petVenue", {});
   });
 
   // Load example page and pass in an example by id
