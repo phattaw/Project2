@@ -8,9 +8,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout <i class="fas fa-hand-peace"></i></a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Friends <i class="fas fa-hand-peace"></i></a>
                 </li>
@@ -30,6 +27,9 @@
                         <a class="dropdown-item" href="#"><i class="fas fa-hotel"></i> Hotels</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-utensils"></i> Restaurants</a>
                         <a class="dropdown-item" href="#"><i class="fas fa-leaf"></i> Pet Parks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Sign Out <i class="fas fa-times-circle"></i></a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -82,9 +82,15 @@
                             <label for="reviewPlace">Name of Place:</label>
                             <input type="text" class="form-control" id="reviewPlace" placeholder="Review Place">
                         </div>
-                        <div class="form-group">
-                            <label for="reviewTitle">Title of the Review:</label>
-                            <input type="text" class="form-control" id="reviewTitle" placeholder="Review Title">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City:</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">State:</label>
+                                <input type="text" class="form-control" id="inputState">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Review: </label>
