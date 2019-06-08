@@ -48,18 +48,6 @@ $(document).ready(function () {
     $("#signUpModal").modal("hide");
   });
 
-  $("#postReview").on("click", function (event) {
-    event.preventDefault();
-
-    $("#postReviewModal").modal("show");
-  });
-
-  $("#postPhoto").on("click", function (event) {
-    event.preventDefault();
-
-    $("#postPhotoModal").modal("show");
-  });
-
   $("#postHotel").on("click", function (event) {
     event.preventDefault();
 
@@ -148,5 +136,28 @@ $(document).ready(function () {
       //this is where you would show the login error message
     });
   });
+
+  getHotels();
+  getRestaurants();
+  getDogParks();
+  
 });
 
+// Function for retrieving authors and getting them ready to be rendered to the page
+function getHotels() {
+  $.get("/api/hotels", function(data) {
+    console.log(`getHotels: ${JSON.stringify(data, null, 2)}`);
+  });
+}
+
+function getRestaurants() {
+  $.get("/api/restaurants", function(data) {
+    console.log(`getRestaurants: ${JSON.stringify(data, null, 2)}`);
+  });
+}
+
+function getDogParks() {
+  $.get("/api/dogParks", function(data) {
+    console.log(`getDogParks: ${JSON.stringify(data, null, 2)}`);
+  });
+}

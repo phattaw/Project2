@@ -81,4 +81,26 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.get("/api/hotels", function(req, res) {
+    res.json({
+      description: "Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehouse, and dog park, constructed out of repurposed shipping containers.",
+      Address: "501 Berkley Parkway, Kansas City, MO 64120",
+      Phone: "(816) 4747-2275"
+    });
+  })
+  app.get("/api/restaurants", function(req, res) {
+    res.json({
+      description: "Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehouse, and dog park, constructed out of repurposed shipping containers.",
+      Address: "501 Berkley Parkway, Kansas City, MO 64120",
+      Phone: "(816) 4747-2275"
+    });
+  })
+  app.get("/api/dogParks", function(req, res) {
+    res.json({
+      description: "Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehouse, and dog park, constructed out of repurposed shipping containers.",
+      Address: "501 Berkley Parkway, Kansas City, MO 64120",
+      Phone: "(816) 4747-2275"
+    });
+  })
 };

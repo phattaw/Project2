@@ -12,14 +12,6 @@
                     <a class="nav-link" href="#">Friends <i class="fas fa-hand-peace"></i></a>
                 </li>
                 <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Post <i class="fas fa-plus-circle"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#" id="postReview"><i class="fas fa-pencil-alt"></i> Reviews</a>
-                            <a class="dropdown-item" href="#" id="postPhoto"><i class="fas fa-camera-retro"></i> Photos </a>
-                    </li>
-                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Places <i class="fas fa-map-marked-alt"></i>
                     </a>
@@ -67,79 +59,7 @@
         </nav>
     </footer>
 
-    <!-- This is the modal to post a review! -->
-    <div class="modal" tabindex="-1" role="dialog" id="postReviewModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Post a Review!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="reviewForm">
-                        <div class="form-group">
-                            <label for="reviewPlace">Name of Place:</label>
-                            <input type="text" class="form-control" id="reviewPlace" placeholder="Review Place">
-                        </div>
-                          <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputCity">City:</label>
-                                <input type="text" class="form-control" id="inputCity">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputState">State:</label>
-                                <input type="text" class="form-control" id="inputState">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="reviewPlace">Link</label>
-                            <input type="text" class="form-control" id="websiteLink" placeholder="Link to Website">
-                        </div>
-                        <div class="form-group">
-                            <label for="reviewText">Review: </label>
-                            <textarea class="form-control" id="reviewText" rows="3" placeholder="Review Text"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-dark btn-lg">Submit <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- This is the modal to post a photo! -->
-    <div class="modal" tabindex="-1" role="dialog" id="postPhotoModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Post a Photo!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="photoForm">
-                        <div class="form-group">
-                            <label for="photoTitle">Title of Photo:</label>
-                            <input type="text" class="form-control" id="photoTitle" placeholder="Photo Title">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPhoto">Photo:</label>
-                            <input type="file" class="form-control-file" id="inputPhoto">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPhotoDescription">Description of Photo: </label>
-                            <textarea class="form-control" id="inputPhotoDescription" rows="3" placeholder="Photo Description"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-dark btn-lg">Submit <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!-- This is the modal to post restaurant! -->
+<!-- This is the modal to post hotel! -->
 
     <div class="modal" tabindex="-1" role="dialog" id="postHotelModal">
         <div class="modal-dialog" role="document">
@@ -151,18 +71,32 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="postHotel">
                         <div class="form-group">
                             <label for="nameHotel">Name of Hotel:</label>
                             <input type="text" class="form-control" id="nameHotel" placeholder="Hotel Name">
                         </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City:</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="City">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">State:</label>
+                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <label for="descriptionHotel">Description of Hotel:</label>
-                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Hotel Description"></textarea>
+                            <label for="reviewHotel">Review of Hotel:</label>
+                           <textarea class="form-control" id="reviewHotel" rows="3" placeholder="Hotel Review"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="linkHotel">Link to Hotel's Website:</label>
                             <input type="text" class="form-control" id="linkHotel" placeholder="Hotel Website">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhoto">Photo:</label>
+                            <input type="file" class="form-control-file" id="inputPhoto">
                         </div>
                         <button type="submit" class="btn btn-dark btn-lg">Post Hotel <i class="fas fa-paper-plane"></i></button>
                     </form>
@@ -188,6 +122,16 @@
                             <label for="nameRestaurant">Name of Restaurant:</label>
                             <input type="text" class="form-control" id="nameRestaurant" placeholder="Restaurant Name">
                         </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City:</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="City">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">State:</label>
+                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="descriptionRestaurant">Description of Restaurant:</label>
                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Restaurant Description"></textarea>
@@ -195,6 +139,10 @@
                         <div class="form-group">
                             <label for="linkRestaurant">Link to Restaurant's Website:</label>
                             <input type="text" class="form-control" id="linkRestaurant" placeholder="Restaurant Website">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhoto">Photo:</label>
+                            <input type="file" class="form-control-file" id="inputPhoto">
                         </div>
                         <button type="submit" class="btn btn-dark btn-lg">Post Restaurant <i class="fas fa-paper-plane"></i></button>
                     </form>
@@ -220,6 +168,16 @@
                             <label for="nameVeterinarian">Name of Veterinarian:</label>
                             <input type="text" class="form-control" id="nameVeterinian" placeholder="Veterinarian Name">
                         </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City:</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="City">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">State:</label>
+                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="descriptionVeterinarian">Description of Veterinarian:</label>
                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Veterinarian Description"></textarea>
@@ -227,6 +185,10 @@
                         <div class="form-group">
                             <label for="linkVeterinarian">Link to Veterinarian's Website:</label>
                             <input type="text" class="form-control" id="linkVeterinarian" placeholder="Veterinarian Website">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhoto">Photo:</label> 
+                            <input type="file" class="form-control-file" id="inputPhoto">
                         </div>
                         <button type="submit" class="btn btn-dark btn-lg">Post Veterinarian  <i class="fas fa-paper-plane"></i></button>
                     </form>
@@ -252,9 +214,23 @@
                             <label for="namePetPark">Name of Pet Park:</label>
                             <input type="text" class="form-control" id="namePetPark" placeholder="Pet Park Name">
                         </div>
+                                                <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City:</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="City">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">State:</label>
+                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="descriptionPetPark">Description of Pet Park:</label>
                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pet Park Description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhoto">Photo:</label>
+                            <input type="file" class="form-control-file" id="inputPhoto">
                         </div>
                         <button type="submit" class="btn btn-dark btn-lg">Post Pet Park <i class="fas fa-paper-plane"></i></button>
                     </form>
