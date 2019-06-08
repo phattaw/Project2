@@ -10,6 +10,26 @@ module.exports = function(app) {
     // They won't get this or even be able to access this page if they aren't authed
     res.json("/petVenue");
   });
+
+  app.post("/api/search", function(req, res) {
+    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+    // So we're sending the user back the route to the members page because the redirect will happen on the front end
+    // They won't get this or even be able to access this page if they aren't authed
+    console.log(req.body.searchVal);
+    res.json({});
+  });
+
+  app.post("/api/reviewPlace", function(req, res) {
+    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+    // So we're sending the user back the route to the members page because the redirect will happen on the front end
+    // They won't get this or even be able to access this page if they aren't authed
+    // console.log(req.body);
+    console.log(req.body.reviewPlace);
+    console.log(req.body.reviewTitle);
+    console.log(req.body.reviewText);
+    res.json({});
+  });
+
   // app.post("/api/login", function(req, res) {
   //   // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
   //   // So we're sending the user back the route to the members page because the redirect will happen on the front end

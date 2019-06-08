@@ -32,8 +32,8 @@
                     <a class="nav-link" href="/logout">Sign Out <i class="fas fa-times-circle"></i></a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" id="searchForm">
+                <input class="form-control mr-sm-2" type="search" id="search" name="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div> 
@@ -77,7 +77,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="reviewForm">
                         <div class="form-group">
                             <label for="reviewPlace">Name of Place:</label>
                             <input type="text" class="form-control" id="reviewPlace" placeholder="Review Place">
