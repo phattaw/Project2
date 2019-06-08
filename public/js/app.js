@@ -59,4 +59,46 @@ $(document).ready(function () {
 
     $("#postPhotoModal").modal("show");
   });
+
+  $("#searchForm").on("submit", function(event) {
+    event.preventDefault();
+
+    let searchVal = $("#search").val().trim();
+
+    $.post("/api/search", { searchVal: searchVal}).then(function (data) {
+      // console.log(data);
+    }).catch(function (err){
+      // console.log(err);
+      console.log("testing");
+      //this is where you would show the login error message
+    });
+
+
+    // console.log(JSON.stringify(event, null, 2));
+  });
+  $("#reviewForm").on("submit", function(event) {
+    event.preventDefault();
+
+    let reviewPlace = $("#reviewPlace").val().trim();
+    let reviewTitle = $("#reviewTitle").val().trim();
+    let reviewText = $("#reviewText").val().trim();
+
+    let data = {
+      reviewPlace: reviewPlace,
+      reviewTitle: reviewTitle,
+      reviewText: reviewText
+    }
+
+    $.post("/api/reviewPlace", data).then(function (data) {
+      // console.log(data);
+    }).catch(function (err){
+      // console.log(err);
+      console.log("testing review form");
+      //this is where you would show the login error message
+    });
+
+
+    // console.log(JSON.stringify(event, null, 2));
+  });
+  
 });
