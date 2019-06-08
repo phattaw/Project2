@@ -66,39 +66,61 @@ $(document).ready(function () {
     let searchVal = $("#search").val().trim();
 
     $.post("/api/search", { searchVal: searchVal}).then(function (data) {
-      // console.log(data);
+
     }).catch(function (err){
-      // console.log(err);
-      console.log("testing");
+
+      console.log("searchForm error");
       //this is where you would show the login error message
     });
-
-
-    // console.log(JSON.stringify(event, null, 2));
   });
+
   $("#reviewForm").on("submit", function(event) {
     event.preventDefault();
 
     let reviewPlace = $("#reviewPlace").val().trim();
-    let reviewTitle = $("#reviewTitle").val().trim();
+    let websiteLink = $("#websiteLink").val().trim();
     let reviewText = $("#reviewText").val().trim();
+    let inputCity = $("#inputCity").val().trim();
+    let inputState = $("#inputState").val().trim();
 
     let data = {
       reviewPlace: reviewPlace,
-      reviewTitle: reviewTitle,
-      reviewText: reviewText
+      websiteLink: websiteLink,
+      reviewText: reviewText,
+      inputCity: inputCity,
+      inputState: inputState
     }
 
     $.post("/api/reviewPlace", data).then(function (data) {
-      // console.log(data);
+
     }).catch(function (err){
-      // console.log(err);
+
       console.log("testing review form");
       //this is where you would show the login error message
     });
-
-
-    // console.log(JSON.stringify(event, null, 2));
   });
   
+  
+  $("#photoForm").on("submit", function(event) {
+    event.preventDefault();
+
+    let photoTitle = $("#photoTitle").val().trim();
+    let inputPhoto = $("#inputPhoto").val().trim();
+    let inputPhotoDescription = $("#inputPhotoDescription").val().trim();
+
+    let data = {
+      photoTitle: photoTitle,
+      inputPhoto: inputPhoto,
+      inputPhotoDescription: inputPhotoDescription
+    }
+
+    $.post("/api/photo", data).then(function (data) {
+
+    }).catch(function (err){
+
+      console.log("photoForm error");
+      //this is where you would show the login error message
+    });
+  });
 });
+
