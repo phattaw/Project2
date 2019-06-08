@@ -60,6 +60,31 @@ $(document).ready(function () {
     $("#postPhotoModal").modal("show");
   });
 
+  $("#postHotel").on("click", function (event) {
+    event.preventDefault();
+
+    $("#postHotelModal").modal("show");
+  });
+
+  $("#postRestaurant").on("click", function (event) {
+    event.preventDefault();
+
+    $("#postRestaurantModal").modal("show");
+  });
+
+  $("#postPetPark").on("click", function (event) {
+    event.preventDefault();
+
+    $("#postPetParkModal").modal("show");
+  }); 
+
+  $("#postVeterinarian").on("click", function (event) {
+    event.preventDefault();
+
+    $("#postVeterinarianModal").modal("show");
+  }); 
+
+
   $("#searchForm").on("submit", function(event) {
     event.preventDefault();
 

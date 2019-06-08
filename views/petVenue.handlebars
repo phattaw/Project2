@@ -24,9 +24,10 @@
                         Places <i class="fas fa-map-marked-alt"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#"><i class="fas fa-hotel"></i> Hotels</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-utensils"></i> Restaurants</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-leaf"></i> Pet Parks</a>
+                        <a class="dropdown-item" href="#" id="postHotel"><i class="fas fa-hotel"></i> Hotels</a>
+                        <a class="dropdown-item" href="#" id="postRestaurant"><i class="fas fa-utensils"></i> Restaurants</a>
+                        <a class="dropdown-item" href="#" id="postVeterinarian"><i class="fas fa-user-md"></i> Veterinarian</a>
+                        <a class="dropdown-item" href="#" id="postPetPark"><i class="fas fa-leaf"></i> Pet Parks</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Sign Out <i class="fas fa-times-circle"></i></a>
@@ -138,6 +139,129 @@
         </div>
     </div>
 
+<!-- This is the modal to post restaurant! -->
+
+    <div class="modal" tabindex="-1" role="dialog" id="postHotelModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post a Hotel!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nameHotel">Name of Hotel:</label>
+                            <input type="text" class="form-control" id="nameHotel" placeholder="Hotel Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="descriptionHotel">Description of Hotel:</label>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Hotel Description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="linkHotel">Link to Hotel's Website:</label>
+                            <input type="text" class="form-control" id="linkHotel" placeholder="Hotel Website">
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg">Post Hotel <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is the modal to post restaurant! -->
+
+    <div class="modal" tabindex="-1" role="dialog" id="postRestaurantModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post a Restaurant!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nameRestaurant">Name of Restaurant:</label>
+                            <input type="text" class="form-control" id="nameRestaurant" placeholder="Restaurant Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="descriptionRestaurant">Description of Restaurant:</label>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Restaurant Description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="linkRestaurant">Link to Restaurant's Website:</label>
+                            <input type="text" class="form-control" id="linkRestaurant" placeholder="Restaurant Website">
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg">Post Restaurant <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is the modal to post veterinarians! -->
+    
+    <div class="modal" tabindex="-1" role="dialog" id="postVeterinarianModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post a Veterinarian!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nameVeterinarian">Name of Veterinarian:</label>
+                            <input type="text" class="form-control" id="nameVeterinian" placeholder="Veterinarian Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="descriptionVeterinarian">Description of Veterinarian:</label>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Veterinarian Description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="linkVeterinarian">Link to Veterinarian's Website:</label>
+                            <input type="text" class="form-control" id="linkVeterinarian" placeholder="Veterinarian Website">
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg">Post Veterinarian  <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is the modal to post pet park! -->
+
+    <div class="modal" tabindex="-1" role="dialog" id="postPetParkModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post a Pet Park!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="namePetPark">Name of Pet Park:</label>
+                            <input type="text" class="form-control" id="namePetPark" placeholder="Pet Park Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="descriptionPetPark">Description of Pet Park:</label>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pet Park Description"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-lg">Post Pet Park <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- This is the large modal for content! -->
 
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -162,12 +286,6 @@
                     <hr>
                     <h5>Description:</h5>
                     <p>Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehous, and dog park, constructed out of repurposed shipping containers.</p>
-                    <h5>Address:</h5>
-                    <p>501 Berkley Parkway, Kansas City, MO 64120</p>
-                    <h5>Hours</h5>
-                    <p>9AM to 10PM, Everyday</p>
-                    <h5>Phone Number:</h5>
-                    <p>(816) 4747-2275</p>
                     <a class="btn btn-primary btn-lg" id="websiteBtn" href="https://www.barkdogbar.com/" target="_blank">Website <i class="fas fa-paw"></i></a>
                 </div>
               </div>
