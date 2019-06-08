@@ -64,8 +64,9 @@ $(document).ready(function () {
     event.preventDefault();
 
     let searchVal = $("#search").val().trim();
+    let data = { searchVal: searchVal };
 
-    $.post("/api/search", { searchVal: searchVal}).then(function (data) {
+    $.post("/api/search", data).then(function (data) {
 
     }).catch(function (err){
 
