@@ -42,10 +42,14 @@
                 </div>
             </div>
             <div class="row">
+                {{#each places}}
                 <div class="col-sm-4">
-                        <img src="/images/barKDogBar.png" class="img-fluid" alt="Pet Friendly Places" >
-                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target=".bd-example-modal-lg">Bar K Dog Bar <i class="fas fa-paw"></i></button>
+         
+                        <img src="/images/dog_{{this.type}}.png" class="img-fluid" alt="Pet Friendly Places" >
+
+                    <button id={{this.id}} type="button" class="placeModal btn btn-primary btn-lg btn-block" data-toggle="modal" data-target=".bd-example-modal-lg">{{this.name}} <i class="fas fa-paw"></i></button>
                 </div>
+                {{/each}}
             </div>
         </div>
     </main>
@@ -71,33 +75,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="postHotel">
+                    <form class="reviewForm">
                         <div class="form-group">
                             <label for="nameHotel">Name of Hotel:</label>
-                            <input type="text" class="form-control" id="nameHotel" placeholder="Hotel Name">
+                            <input type="text" class="form-control" name="name" id="nameHotel" placeholder="Hotel Name">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City:</label>
-                                <input type="text" class="form-control" id="inputCity" placeholder="City">
+                                <input type="text" class="form-control" name="city" id="inputCity" placeholder="City">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">State:</label>
-                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                                <input type="text" class="form-control" name="state" id="inputState" placeholder="State">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="reviewHotel">Review of Hotel:</label>
-                           <textarea class="form-control" id="reviewHotel" rows="3" placeholder="Hotel Review"></textarea>
+                           <textarea class="form-control" id="reviewHotel" rows="3" name="review" placeholder="Hotel Review"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="linkHotel">Link to Hotel's Website:</label>
-                            <input type="text" class="form-control" id="linkHotel" placeholder="Hotel Website">
+                            <input type="text" class="form-control" id="linkHotel" name="website" placeholder="Hotel Website">
                         </div>
                         <div class="form-group">
                             <label for="inputPhoto">Photo:</label>
                             <input type="file" class="form-control-file" id="inputPhoto">
                         </div>
+                        <input type="hidden" name="type" value="hotel">
                         <button type="submit" class="btn btn-dark btn-lg">Post Hotel <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
@@ -117,33 +122,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form class="reviewForm">
                         <div class="form-group">
                             <label for="nameRestaurant">Name of Restaurant:</label>
-                            <input type="text" class="form-control" id="nameRestaurant" placeholder="Restaurant Name">
+                            <input type="text" class="form-control" id="nameRestaurant" name="name" placeholder="Restaurant Name">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City:</label>
-                                <input type="text" class="form-control" id="inputCity" placeholder="City">
+                                <input type="text" class="form-control" id="inputCity" name="city" placeholder="City">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">State:</label>
-                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                                <input type="text" class="form-control" id="inputState" name="state" placeholder="State">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="descriptionRestaurant">Description of Restaurant:</label>
-                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Restaurant Description"></textarea>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review" placeholder="Restaurant Description"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="linkRestaurant">Link to Restaurant's Website:</label>
-                            <input type="text" class="form-control" id="linkRestaurant" placeholder="Restaurant Website">
+                            <input type="text" class="form-control" id="linkRestaurant" name="website" placeholder="Restaurant Website">
                         </div>
                         <div class="form-group">
                             <label for="inputPhoto">Photo:</label>
                             <input type="file" class="form-control-file" id="inputPhoto">
                         </div>
+                        <input type="hidden" name="type" value="restaurant">
                         <button type="submit" class="btn btn-dark btn-lg">Post Restaurant <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
@@ -163,33 +169,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form class="reviewForm">
                         <div class="form-group">
                             <label for="nameVeterinarian">Name of Veterinarian:</label>
-                            <input type="text" class="form-control" id="nameVeterinian" placeholder="Veterinarian Name">
+                            <input type="text" class="form-control" id="nameVeterinian" name="name" placeholder="Veterinarian Name">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City:</label>
-                                <input type="text" class="form-control" id="inputCity" placeholder="City">
+                                <input type="text" class="form-control" id="inputCity" name="city" placeholder="City">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">State:</label>
-                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                                <input type="text" class="form-control" id="inputState" name="state" placeholder="State">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="descriptionVeterinarian">Description of Veterinarian:</label>
-                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Veterinarian Description"></textarea>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review" placeholder="Veterinarian Description"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="linkVeterinarian">Link to Veterinarian's Website:</label>
-                            <input type="text" class="form-control" id="linkVeterinarian" placeholder="Veterinarian Website">
+                            <input type="text" class="form-control" id="linkVeterinarian" name="website" placeholder="Veterinarian Website">
                         </div>
                         <div class="form-group">
                             <label for="inputPhoto">Photo:</label> 
                             <input type="file" class="form-control-file" id="inputPhoto">
                         </div>
+                        <input type="hidden" name="type" value="veteranarian">
                         <button type="submit" class="btn btn-dark btn-lg">Post Veterinarian  <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
@@ -209,29 +216,30 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form class="reviewForm">
                         <div class="form-group">
                             <label for="namePetPark">Name of Pet Park:</label>
-                            <input type="text" class="form-control" id="namePetPark" placeholder="Pet Park Name">
+                            <input type="text" class="form-control" id="namePetPark" name="name" placeholder="Pet Park Name">
                         </div>
                                                 <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City:</label>
-                                <input type="text" class="form-control" id="inputCity" placeholder="City">
+                                <input type="text" class="form-control" id="inputCity" name="city" placeholder="City">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputState">State:</label>
-                                <input type="text" class="form-control" id="inputState" placeholder="State">
+                                <input type="text" class="form-control" id="inputState" name="state" placeholder="State">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="descriptionPetPark">Description of Pet Park:</label>
-                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pet Park Description"></textarea>
+                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="review" placeholder="Pet Park Description"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="inputPhoto">Photo:</label>
                             <input type="file" class="form-control-file" id="inputPhoto">
                         </div>
+                        <input type="hidden" name="type" value="park">
                         <button type="submit" class="btn btn-dark btn-lg">Post Pet Park <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
@@ -239,41 +247,9 @@
         </div>
     </div>
     <!-- This is the large modal for content! -->
-
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center">Bar K Dog Bar!</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="/images/barKDogBarInside.png" class="img-fluid" alt="Pet Friend Places">
-                    <hr>
-                    <div id="modalBtns">
-                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-share-square"></i></button> 
-                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-directions"></i></button> 
-                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-save"></i></button>
-                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-paw"></i></button>
-                            <button type="button" class="btn btn-outline-primary"><i class="fas fa-trash"></i></button>
-                    </div>
-                    <hr>
-                    <h5>Description:</h5>
+        <div class="modal-dialog modal-lg">
+            <div id="reviewModalContent" class="modal-content"></div>
+        </div>
+    </div>
 
-                    <p>Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehous, and dog park, constructed out of repurposed shipping containers.</p>
-
-                    <p>Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehouse, and dog park, constructed out of repurposed shipping containers.</p>
-                    <h5>Address:</h5>
-                    <p>501 Berkley Parkway, Kansas City, MO 64120</p>
-                    <h5>Hours</h5>
-                    <p>9AM to 10PM, Everyday</p>
-                    <h5>Phone Number:</h5>
-                    <p>(816) 4747-2275</p>
-
-                    <a class="btn btn-primary btn-lg" id="websiteBtn" href="https://www.barkdogbar.com/" target="_blank">Website <i class="fas fa-paw"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>

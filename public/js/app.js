@@ -88,32 +88,21 @@ $(document).ready(function () {
     });
   });
 
-  $("#reviewForm").on("submit", function(event) {
+  $(".reviewForm").on("submit", function(event) {
     event.preventDefault();
-
-    let reviewPlace = $("#reviewPlace").val().trim();
-    let websiteLink = $("#websiteLink").val().trim();
-    let reviewText = $("#reviewText").val().trim();
-    let inputCity = $("#inputCity").val().trim();
-    let inputState = $("#inputState").val().trim();
-
-    let data = {
-      reviewPlace: reviewPlace,
-      websiteLink: websiteLink,
-      reviewText: reviewText,
-      inputCity: inputCity,
-      inputState: inputState
-    }
+    let data = $(this).serialize();
 
     $.post("/api/reviewPlace", data).then(function (data) {
-
+      console.log(data);
+      $("#postHotelModal").modal("hide");
+      $("#postVeteranarianModal").modal("hide");
+      $("#postRestaurantModal").modal("hide");
+      $("#postPetParkModal").modal("hide");
+      window.location.replace(data);
     }).catch(function (err){
-
       console.log("testing review form");
-      //this is where you would show the login error message
     });
   });
-  
   
   $("#photoForm").on("submit", function(event) {
     event.preventDefault();
@@ -137,6 +126,15 @@ $(document).ready(function () {
     });
   });
 
+  $(".placeModal").on("click", function(event) {
+    var placeId = $(this).attr("id");
+    console.log(placeId);
+    $.get("/api/places/" + placeId, function(data) {
+      var modalContent = getModalContent(data);
+      $("#reviewModalContent").html(modalContent);
+    });
+  })
+
   getHotels();
   getRestaurants();
   getDogParks();
@@ -146,18 +144,55 @@ $(document).ready(function () {
 // Function for retrieving authors and getting them ready to be rendered to the page
 function getHotels() {
   $.get("/api/hotels", function(data) {
-    console.log(`getHotels: ${JSON.stringify(data, null, 2)}`);
+    // console.log(`getHotels: ${JSON.stringify(data, null, 2)}`);
   });
 }
 
 function getRestaurants() {
   $.get("/api/restaurants", function(data) {
-    console.log(`getRestaurants: ${JSON.stringify(data, null, 2)}`);
+    // console.log(`getRestaurants: ${JSON.stringify(data, null, 2)}`);
   });
 }
 
 function getDogParks() {
   $.get("/api/dogParks", function(data) {
-    console.log(`getDogParks: ${JSON.stringify(data, null, 2)}`);
-  });
+    // console.log(`getDogParks: ${JSON.stringify(data, null, 2)}`);
+  });  
+}
+
+function getModalContent(data)  {
+  console.log(data);
+  return `
+  <div class="modal-header">
+          <h5 class="modal-title text-center">${data.name}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body text-center">
+          <img src="/images/barKDogBarInside.png" class="img-fluid" alt="Pet Friend Places">
+          <hr>
+          <div id="modalBtns">
+                  <button type="button" class="btn btn-outline-primary"><i class="fas fa-share-square"></i></button> 
+                  <button type="button" class="btn btn-outline-primary"><i class="fas fa-directions"></i></button> 
+                  <button type="button" class="btn btn-outline-primary"><i class="fas fa-save"></i></button>
+                  <button type="button" class="btn btn-outline-primary"><i class="fas fa-paw"></i></button>
+                  <button type="button" class="btn btn-outline-primary"><i class="fas fa-trash"></i></button>
+          </div>
+          <hr>
+          <h5>Description:</h5>
+  
+          <p>Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehous, and dog park, constructed out of repurposed shipping containers.</p>
+  
+          <p>Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehouse, and dog park, constructed out of repurposed shipping containers.</p>
+          <h5>Location:</h5>
+          <p>${data.city}, ${data.state}</p>
+          <h5>Hours</h5>
+          <p>9AM to 10PM, Everyday</p>
+          <h5>Phone Number:</h5>
+          <p>(816) 4747-2275</p>
+  
+          <a class="btn btn-primary btn-lg" id="websiteBtn" href="https://${data.website}" target="_blank">Website <i class="fas fa-paw"></i></a>
+      </div>
+  `;
 }
