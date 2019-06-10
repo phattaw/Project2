@@ -1,6 +1,6 @@
 # Project2 - Pet Venue Review
 
-![Image of petVenueReview](./public/images/crystalCollector.png)
+![Image of petVenueReview](./public/images/petVenue.png)
 
 ### About this App:
 
