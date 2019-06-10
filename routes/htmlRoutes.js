@@ -15,7 +15,11 @@ module.exports = function(app) {
 
   app.get("/petVenue", function(req, res) {
     if(isAuthenticated) {
-      res.render("petVenue", {});
+      db.Place.findAll({}).then(function(places) {
+        res.render("petVenue", {
+          places
+        });
+      });
     } else (res.render("petVenue", {}))
     // console.log(req.user);
     // res.render("petVenue", {});
