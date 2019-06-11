@@ -4,20 +4,21 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
+   app.get("/", function(req, res) {
+     // db.Example.findAll({}).then(function(dbExamples) {
+     //   res.render("index", {
+     //     msg: "Welcome!",
+     //     examples: dbExamples
+     //   });
+     // });
+     res.render("petVenue", { msg: "Welcome!", examples: {}});
+   });
 
   app.get("/petVenue", function(req, res) {
     if(isAuthenticated) {
-      db.Place.findAll({}).then(function(places) {
+      db.Venues.findAll({}).then(function(venues) {
         res.render("petVenue", {
-          places
+          venues
         });
       });
     } else (res.render("petVenue", {}))
