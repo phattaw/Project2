@@ -14,7 +14,6 @@ module.exports = function (sequelize, DataTypes) {
     members_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      AUTO_INCREMENT,
       PRIMARY: true
     },
 
