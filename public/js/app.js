@@ -25,6 +25,7 @@ $(document).ready(function () {
     var userData = $(this).serialize();
 
     $.post("/api/login", userData).then(function (data) {
+      console.log(data);
       window.location.replace(data);
       // console.log(data);
     }).catch(function (err){
@@ -192,7 +193,7 @@ function getModalContent(data)  {
           <h5>Phone Number:</h5>
           <p>(816) 4747-2275</p>
   
-          <a class="btn btn-primary btn-lg" id="websiteBtn" href="https://${data.website}" target="_blank">Website <i class="fas fa-paw"></i></a>
+          <a class="btn btn-primary btn-lg" id="websiteBtn" href="${data.website ? (/^https?:\/\//).test(data.website) ? data.website : "https://"+data.website : "#"}" target="_blank">Website <i class="fas fa-paw"></i></a>
       </div>
   `;
 }
