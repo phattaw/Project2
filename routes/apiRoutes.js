@@ -16,6 +16,41 @@ module.exports = function (app) {
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
     console.log(req.body.searchVal);
+    db.Venues.findAll({
+      where: {
+        name: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })
+    db.Venues.findAll({
+      where: {
+        city: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })
+    db.Venues.findAll({
+      where: {
+        state: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })    
+    db.Venues.findAll({
+      where: {
+        type: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })
+    db.Venues.findAll({
+      where: {
+        average_rating: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })
     res.json({});
   });
 
