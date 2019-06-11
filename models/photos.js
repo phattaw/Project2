@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.INTEGER,
         allowNull: false,
         PRIMARY: true
-      }
+      },
       photoAnchor: {
         type: DataTypes.STRING(500),
         allowNull: false
