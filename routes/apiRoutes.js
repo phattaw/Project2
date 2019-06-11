@@ -16,6 +16,41 @@ module.exports = function (app) {
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
     console.log(req.body.searchVal);
+    db.Venues.findAll({
+      where: {
+        name: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })
+    db.Venues.findAll({
+      where: {
+        city: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })
+    db.Venues.findAll({
+      where: {
+        state: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })    
+    db.Venues.findAll({
+      where: {
+        type: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })
+    db.Venues.findAll({
+      where: {
+        average_rating: req.body.searchVal
+      }
+    }).then(function (searchItems) {
+      console.log(searchItems);
+    })
     res.json({});
   });
 
@@ -25,7 +60,7 @@ module.exports = function (app) {
     // They won't get this or even be able to access this page if they aren't authed
     // console.log(req.body);
     console.log(`/api/reviewPlace: ${JSON.stringify(req.body, null, 2)}`);
-    db.Place.create({
+    db.Venues.create({
       name: req.body.name,
       city: req.body.city,
       state: req.body.state,
@@ -95,8 +130,8 @@ module.exports = function (app) {
   });
 
   app.get("/api/places/:id", function (req, res) {
-    db.Place.findOne({ where: { id: req.params.id } }).then(function (place) {
-      res.json(place);
+    db.Venues.findOne({ where: { id: req.params.id } }).then(function (venues) {
+      res.json(venues);
     });
   });
 
