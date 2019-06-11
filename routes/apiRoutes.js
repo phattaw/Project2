@@ -25,7 +25,7 @@ module.exports = function (app) {
     // They won't get this or even be able to access this page if they aren't authed
     // console.log(req.body);
     console.log(`/api/reviewPlace: ${JSON.stringify(req.body, null, 2)}`);
-    db.Place.create({
+    db.Venues.create({
       name: req.body.name,
       city: req.body.city,
       state: req.body.state,
@@ -95,8 +95,8 @@ module.exports = function (app) {
   });
 
   app.get("/api/places/:id", function (req, res) {
-    db.Place.findOne({ where: { id: req.params.id } }).then(function (place) {
-      res.json(place);
+    db.Venues.findOne({ where: { id: req.params.id } }).then(function (venues) {
+      res.json(venues);
     });
   });
 
