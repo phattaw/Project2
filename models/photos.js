@@ -1,30 +1,25 @@
+/*CREATE TABLE photos (
+  photos_id INTEGER NOT NULL AUTO_INCREMENT ,
+  venue_name VARCHAR(100) NOT NULL,
+  members VARCHAR(100),
+  rating INTEGER NULL DEFAULT 5,
+  PRIMARY KEY (photos_id)
+);*/
+
 module.exports = function(sequelize, DataTypes) {
-    var Venues = sequelize.define("Venues", {
-      venues_id: {
+    var photos = sequelize.define("photos", {
+      photos_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         PRIMARY: true
       }
-      name: {
-        type: DataTypes.STRING,
+      photoAnchor: {
+        type: DataTypes.STRING(500),
         allowNull: false
       },
-      city: {
+      venue: {
         type: DataTypes.STRING,
         allowNull: false
-      },
-      state: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      type: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        defaultValue: "hotel"
-      },
-      average_rating: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
       }
     });
   
@@ -38,5 +33,5 @@ module.exports = function(sequelize, DataTypes) {
     //     PRIMARY KEY (venues_id)
     //   );
 
-    return Venues;
+    return photos;
   };
