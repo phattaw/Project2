@@ -16,9 +16,9 @@ module.exports = function(app) {
 
   app.get("/petVenue", function(req, res) {
     if(isAuthenticated) {
-      db.Place.findAll({}).then(function(places) {
+      db.Venues.findAll({}).then(function(venues) {
         res.render("petVenue", {
-          places
+          venues
         });
       });
     } else (res.render("petVenue", {}))
