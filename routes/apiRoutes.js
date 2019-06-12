@@ -15,43 +15,57 @@ module.exports = function (app) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    console.log(req.body.searchVal);
+    let searchVal = req.body.searchVal.trim().toLowerCase();
+    let results = [];
     db.Venues.findAll({
       where: {
-        name: req.body.searchVal
+        name: searchVal
       }
     }).then(function (searchItems) {
-      console.log(searchItems);
+      searchItems.forEach(element => {
+        results.push(element); 
+      });
+
+      db.Venues.findAll({
+        where: {
+          city: searchVal
+        }
+      }).then(function (searchItems) {
+        searchItems.forEach(element => {
+          results.push(element); 
+        });
+        db.Venues.findAll({
+          where: {
+            state: searchVal
+          }
+        }).then(function (searchItems) {
+          searchItems.forEach(element => {
+            results.push(element); 
+          });
+          db.Venues.findAll({
+            where: {
+              type: searchVal
+            }
+          }).then(function (searchItems) {
+            searchItems.forEach(element => {
+              results.push(element); 
+            });
+
+            db.Venues.findAll({
+              where: {
+                average_rating: searchVal
+              }
+            }).then(function (searchItems) {
+              searchItems.forEach(element => {
+                results.push(element); 
+              });
+
+              res.json({ results: JSON.stringify(results) });
+            })              
+          })
+        })
+      })  
     })
-    db.Venues.findAll({
-      where: {
-        city: req.body.searchVal
-      }
-    }).then(function (searchItems) {
-      console.log(searchItems);
-    })
-    db.Venues.findAll({
-      where: {
-        state: req.body.searchVal
-      }
-    }).then(function (searchItems) {
-      console.log(searchItems);
-    })    
-    db.Venues.findAll({
-      where: {
-        type: req.body.searchVal
-      }
-    }).then(function (searchItems) {
-      console.log(searchItems);
-    })
-    db.Venues.findAll({
-      where: {
-        average_rating: req.body.searchVal
-      }
-    }).then(function (searchItems) {
-      console.log(searchItems);
-    })
-    res.json({});
   });
 
   app.post("/api/reviewPlace", function (req, res) {
@@ -61,10 +75,10 @@ module.exports = function (app) {
     // console.log(req.body);
     console.log(`/api/reviewPlace: ${JSON.stringify(req.body, null, 2)}`);
     db.Venues.create({
-      name: req.body.name,
-      city: req.body.city,
-      state: req.body.state,
-      review: req.body.review,
+      name: req.body.name.trim().toLowerCase(),
+      city: req.body.city.trim().toLowerCase(),
+      state: req.body.state.trim().toLowerCase(),
+      review: req.body.review.trim().toLowerCase(),
       website: req.body.website,
       type: req.body.type,
     }).then(function () {

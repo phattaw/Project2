@@ -80,7 +80,8 @@ $(document).ready(function () {
     let searchVal = $("#search").val().trim();
     let data = { searchVal: searchVal };
 
-    $.post("/api/search", data).then(function (data) {
+    $.post("/api/search", data).then(function (searchResults) {
+      console.log(`/api/search ${JSON.stringify(searchResults, null, 2)}`);
 
     }).catch(function (err){
 
