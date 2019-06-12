@@ -136,6 +136,36 @@ $(document).ready(function () {
     });
   })
 
+  $("#hotelSearch").on("click", function(event) {
+    $.get("/api/hotelSearch/", function(data) {
+      console.log("/api/hotelSearch/");
+
+    });
+  });
+
+  $("#restaurantSearch").on("click", function(event) {
+    $.get("/api/restaurantSearch/", function(data) {
+      console.log("/api/restaurantSearch/");
+
+    });
+
+  });
+
+  $("#veterinariansSearch").on("click", function(event) {
+    $.get("/api/veterinariansSearch/", function(data) {
+      console.log("/api/veterinariansSearch/");
+
+    });
+  });
+
+  $("#petparksSearch").on("click", function(event) {
+    $.get("/api/petparksSearch/", function(data) {
+      console.log("/api/petparksSearch/");
+
+    });
+  });
+
+
   getHotels();
   getRestaurants();
   getDogParks();
