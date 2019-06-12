@@ -175,4 +175,11 @@ module.exports = function (app) {
       Phone: "(816) 4747-2275"
     });
   });
+
+  app.get("/api/places/:id", function (req, res) {
+    db.Venues.findOne({ where: { id: req.params.id } }).then(function (venues) {
+      res.json(venues);
+    });
+  });
+
 };
