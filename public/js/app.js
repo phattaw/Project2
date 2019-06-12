@@ -212,17 +212,12 @@ function getModalContent(data)  {
                   <button type="button" class="btn btn-outline-primary"><i class="fas fa-trash"></i></button>
           </div>
           <hr>
-          <h5>Description:</h5>
+          <h5>Review:</h5>
   
-          <p>Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehous, and dog park, constructed out of repurposed shipping containers.</p>
-  
-          <p>Bar K is a unique and joyful destination featuring a modern bar, restaurant, coffeehouse, and dog park, constructed out of repurposed shipping containers.</p>
+          <p>It is a unique and joyful destination featuring a modern bar, restaurant, coffeehous, and dog park.</p>
+ 
           <h5>Location:</h5>
           <p>${data.city}, ${data.state}</p>
-          <h5>Hours</h5>
-          <p>9AM to 10PM, Everyday</p>
-          <h5>Phone Number:</h5>
-          <p>(816) 4747-2275</p>
   
           <a class="btn btn-primary btn-lg" id="websiteBtn" href="${data.website ? (/^https?:\/\//).test(data.website) ? data.website : "https://"+data.website : "#"}" target="_blank">Website <i class="fas fa-paw"></i></a>
       </div>
