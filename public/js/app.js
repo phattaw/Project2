@@ -50,7 +50,9 @@ $(document).ready(function () {
   });
 
   $("#postHotel").on("click", function (event) {
-    event.preventDefault();
+    event.preventDefault(); 
+
+    console.log("postHotel");
 
     $("#postHotelModal").modal("show");
   });
