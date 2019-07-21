@@ -26,4 +26,6 @@ This app helps pet owners to find, track, and share their experiences of a varie
 
 ### Thanks for Visiting our Project's GitHub:
 
-Enjoy using the Heroku-Deployed version of our website here: 
+Enjoy using the Heroku-Deployed version of our website here: https://pet-venue-review.herokuapp.com/
+
+(Create a new user account, and username and password are saved in local storage!)
